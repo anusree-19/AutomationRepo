@@ -28,7 +28,7 @@ public class Base {
 			ScreenshotUtility screenshot = new ScreenshotUtility();
 			screenshot.getScreenshot(driver, iTestResult.getName());
 		}
-		driver.quit();
+		//driver.quit();
 	}
 
 }

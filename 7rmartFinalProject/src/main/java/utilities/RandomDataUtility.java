@@ -8,7 +8,6 @@ public class RandomDataUtility {
 
 	public String createRandomUsername() {
 		return faker.name().username();
-
 	}
 
 	public String createRandomPassword() {
@@ -23,7 +22,7 @@ public class RandomDataUtility {
 		return faker.internet().emailAddress();
 	}
 
-	public String createRandomPhonenumber() {
+	public String createRandomContactNumber() {
 		return faker.phoneNumber().phoneNumber();
 	}
 }
