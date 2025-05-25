@@ -20,6 +20,10 @@ public class LoginPage {
 	private WebElement passwordfield;
 	@FindBy(xpath = "//button[text()=\"Sign In\"]")
 	private WebElement signInbtn;
+	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
+	private WebElement visiblealert;
+	@FindBy(xpath = "//p[text()='Dashboard']")
+	private WebElement dashboard;
 
 	public void enterUsernameonUsernamefield(String username) {
 		usernamefield.sendKeys(username);
@@ -32,5 +36,16 @@ public class LoginPage {
 	public void clickOnSignIn() {
 		signInbtn.click();
 	}
+	
+	public boolean alertVisibility() {
+		return visiblealert.isDisplayed();
+	}
+	
+	public String getDashboardText() {
+
+		return dashboard.getText();
+	}
+	
+
 
 }

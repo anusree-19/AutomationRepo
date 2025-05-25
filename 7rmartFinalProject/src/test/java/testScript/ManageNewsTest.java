@@ -2,9 +2,11 @@ package testScript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constants.Messages;
 import pages.LoginPage;
 import pages.ManageNewsPage;
 import utilities.ExcelUtility;
@@ -25,6 +27,8 @@ public class ManageNewsTest extends Base{
 		String newnews=ExcelUtility.readStringData(0, 0, "ManageNewsPage");
 		managenewspage.enterNewNewsOnTextbox(newnews);
 		managenewspage.clickOnSavebutton();
+		boolean newnewsalert=managenewspage.newNewsCreationAlert();
+		Assert.assertTrue(newnewsalert,Messages.ADDNEWSERROR);
 	}
 
 }

@@ -25,6 +25,8 @@ public class HomePage {
 	private WebElement admin;
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']//parent::div")
 	private WebElement logout;
+	@FindBy(xpath = "//b[text()='7rmart supermarket']")
+	WebElement loginheader;
 
 	public void enterUsernameonUsernamefield(String username) {
 		usernamefield.sendKeys(username);
@@ -44,6 +46,10 @@ public class HomePage {
 
 	public void clickOnLogout() {
 		logout.click();
+	}
+	
+	public boolean loginpageHeaderDisplayed() {
+		return loginheader.isDisplayed();
 	}
 
 }

@@ -5,9 +5,9 @@
     <classes>
       <class name="testScript.ManageCategoryTest">
         <methods>
+          <include name="verifyUserCanAddNewCategoryOnCategoryPage"/>
           <include name="initializeBrowser"/>
           <include name="driverQuit"/>
-          <include name="verifyUserCanSearchForaAddedCategoryfromManageCateogryPage"/>
         </methods>
       </class> <!-- testScript.ManageCategoryTest -->
     </classes>

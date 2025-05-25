@@ -3,9 +3,11 @@ package testScript;
 import java.awt.AWTException;
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constants.Messages;
 import pages.LoginPage;
 import pages.ManageCategoryPage;
 import utilities.ExcelUtility;
@@ -31,6 +33,8 @@ public class ManageCategoryTest extends Base{
 		//categoryPage.clickOnShowOnTopMenuRadiobutton();
 		//categoryPage.clickOnShowOnLeftMenuRadiobutton();
 		categoryPage.clickOnCategorySaveButton();
+		boolean categryalertmsg=categoryPage.getCateogryCreationAlert();
+		Assert.assertTrue(categryalertmsg,Messages.ADDCATEGORYERROR);
 		
 	}
 	@Test(description = "Verify whether user can sucessfully search for a added category from ManagecategoryPage")
@@ -48,6 +52,9 @@ public class ManageCategoryTest extends Base{
 		//String  newCategory=ExcelUtility.readStringData(0, 0, "ManageCategoryPage");
 		categoryPage.enterCategoryValueIntheCategoryField();
 		categoryPage.clickonsearchbutton();
+		String expected="Shoes";
+		String actual=categoryPage.getCategoryTitle();
+		Assert.assertEquals(actual, expected,Messages.SEARCHCATEOGRYERROR);
 		
 	}
 	

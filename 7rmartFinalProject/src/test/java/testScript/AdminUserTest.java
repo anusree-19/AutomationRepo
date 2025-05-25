@@ -1,10 +1,14 @@
 package testScript;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constants.Messages;
 import pages.AdminUserPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -30,6 +34,8 @@ public class AdminUserTest extends Base {
 		adminuserpage.clickOnUserTypefield();
 		adminuserpage.selectUserType();
 		adminuserpage.clickOnSavebutton();
+		boolean useralert=adminuserpage.userCreationAlert();
+		Assert.assertTrue(useralert,Messages.NEWADMINUSERERROR);
 	}
 
 	@Test(description = "verify that an admin can successfully search for a newly added user on the admin users page")
@@ -48,6 +54,9 @@ public class AdminUserTest extends Base {
 		adminuserpage.clickOnSearchUserTypefield();
 		adminuserpage.selectSearchUserType();
 		adminuserpage.clickOnSearchbutton();
+		String expected="Active";
+		String actual=adminuserpage.searchUserStatus();
+		Assert.assertEquals(actual, expected,Messages.SEARCHNEWADMINUSERERROR);
 		
 	}
 

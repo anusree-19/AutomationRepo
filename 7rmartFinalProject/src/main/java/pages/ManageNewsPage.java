@@ -28,6 +28,8 @@ public class ManageNewsPage {
 	private WebElement newstexbox;
 	@FindBy(xpath = "//button[text()='Save']")
 	private WebElement savenewsbtn;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	private WebElement newsalert;
 	
 	public void enterUsernameonUsernamefield(String username) {
 		usernamefield.sendKeys(username);
@@ -55,6 +57,9 @@ public class ManageNewsPage {
 	public void clickOnSavebutton()
 	{
 		savenewsbtn.click();
+	}
+	public boolean newNewsCreationAlert() {
+		return newsalert.isDisplayed();
 	}
 	
 	

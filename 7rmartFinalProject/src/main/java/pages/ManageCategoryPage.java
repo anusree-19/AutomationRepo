@@ -48,16 +48,17 @@ public class ManageCategoryPage {
 	//@FindBy(xpath = "//button[@type='submit']//parent::div")
 	@FindBy(xpath = "//button[@class='btn btn-danger']")
 	private WebElement savecategorybutton;
-	
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-primary']//child::i")
 	private WebElement searchcategorybutton;
-	
 	//@FindBy(xpath = "//input[@type='text' and @class='form-control']")
 	@FindBy(xpath = "//input[@class='form-control']")
 	private WebElement inputcategoryvalue;
-	
 	@FindBy(xpath = "//button[@name='Search']")
 	private WebElement searchcategorybtn;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	private WebElement categoryalert;
+	@FindBy(xpath = "//tbody//tr//td[text()='Shoes']")
+	private WebElement listtitle;
 	
 	public void clickOnManageCategory()
 	{
@@ -109,6 +110,14 @@ public class ManageCategoryPage {
 	public void clickonsearchbutton()
 	{
 		searchcategorybtn.click();
+	}
+	public boolean getCateogryCreationAlert()
+	{
+		return categoryalert.isDisplayed();
+	}
+	public String getCategoryTitle()
+	{
+		return listtitle.getText();
 	}
 
 }
