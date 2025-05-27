@@ -5,7 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.WaitUtility;
+
 public class ManageNewsPage {
+	WaitUtility wait=new WaitUtility();
 	public WebDriver driver;
 
 	public ManageNewsPage(WebDriver driver) {
@@ -42,21 +45,26 @@ public class ManageNewsPage {
 	public void clickOnSignIn() {
 		signInbtn.click();
 	}
-	public void clickOnManageNews()
+	public ManageNewsPage clickOnManageNews()
 	{
 		managenews.click();
+		return new ManageNewsPage(driver);
 	}
-	public void clickOnNewNewsbutton()
+	public ManageNewsPage clickOnNewNewsbutton()
 	{
 		newnewsbtn.click();
+		return this;
 	}
-	public void enterNewNewsOnTextbox(String newnews)
+	public ManageNewsPage enterNewNewsOnTextbox(String newnews)
 	{
 		newstexbox.sendKeys(newnews);
+		return this;
 	}
-	public void clickOnSavebutton()
+	public ManageNewsPage clickOnSavebutton()
 	{
+		wait.waitUntilClickable(driver,savenewsbtn);
 		savenewsbtn.click();
+		return this;
 	}
 	public boolean newNewsCreationAlert() {
 		return newsalert.isDisplayed();

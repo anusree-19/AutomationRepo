@@ -5,9 +5,11 @@
 		<listener class-name="listeners.Listener"></listener>
 	</listeners>
   <test thread-count="5" name="Test">
-	  
-    <classes>
-      <class name="testScript.HomeTest"/>
+    <classes>		<class name="testScript.LoginTest">			<methods>
+				<include name="verifyUserCanSucessfullyLoginWithInvalidUsernameInvalidpwd"></include>	
+		  	</methods>
+		</class>
+		<class name="testScript.HomeTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

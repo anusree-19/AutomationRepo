@@ -5,8 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage {
+import utilities.WaitUtility;
 
+public class HomePage {
+	WaitUtility wait=new WaitUtility();
 	public WebDriver driver;
 
 	public HomePage(WebDriver driver) {
@@ -40,12 +42,15 @@ public class HomePage {
 		signInbtn.click();
 	}
 
-	public void clickOnAdminLink() {
+	public HomePage clickOnAdminLink() {
 		admin.click();
+		return this;
 	}
 
-	public void clickOnLogout() {
+	public LoginPage clickOnLogout() {
+		wait.waitUntilElementVisible(driver, logout);
 		logout.click();
+		return new LoginPage(driver);
 	}
 	
 	public boolean loginpageHeaderDisplayed() {

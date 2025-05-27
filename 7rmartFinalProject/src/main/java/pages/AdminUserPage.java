@@ -6,7 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.WaitUtility;
+
 public class AdminUserPage {
+	WaitUtility wait=new WaitUtility();
 	public WebDriver driver;
 
 	public AdminUserPage(WebDriver driver) {
@@ -60,55 +63,69 @@ public class AdminUserPage {
 		signInbtn.click();
 	}
 
-	public void clickOnAdminUsers()
+	public AdminUserPage clickOnAdminUsers()
 	{
+		wait.waitUntilClickable(driver, adminuser);
 		adminuser.click();
+		return new AdminUserPage(driver);
 	}
-	public void clickOnNewUser()
+	public AdminUserPage clickOnNewUser()
 	{
 		newuser.click();
+		return this;
 	}
-	public void enterUsernameOnUsrnamefield(String newadminuser)
+	public AdminUserPage enterUsernameOnUsrnamefield(String newadminuser)
 	{
 		username.sendKeys(newadminuser);
+		return this;
 	}
-	public void enterpasswordOnPwdfield(String newadminpwd)
+	public AdminUserPage enterpasswordOnPwdfield(String newadminpwd)
 	{
 		password.sendKeys(newadminpwd);
+		return this;
 	}
-	public void clickOnUserTypefield()
+	public AdminUserPage clickOnUserTypefield()
 	{
+		wait.waitUntilSelected(driver, usertype);
 		usertype.click();
+		return this;
 	}
-	public void selectUserType()
+	public AdminUserPage selectUserType()
 	{
 		Select select=new Select(usertype);
 		select.selectByIndex(1);
+		return this;
 	}
-	public void clickOnSavebutton()
+	public AdminUserPage clickOnSavebutton()
 	{
 		savebtn.click();
+		return this;
 	}
-	public void clickOnSearchforanUser()
+	public AdminUserPage clickOnSearchforanUser()
 	{
 		search.click();
+		return this;
 	}
-	public void enterSearchUsernameonUsernamefield(String searchusername)
+	public AdminUserPage enterSearchUsernameonUsernamefield(String searchusername)
 	{
 		searchusernamefield.sendKeys(searchusername);
+		return this;
 	}
-	public void clickOnSearchUserTypefield()
+	public AdminUserPage clickOnSearchUserTypefield()
 	{
 		searchusertype.click();
+		return this;
 	}
-	public void selectSearchUserType()
+	public AdminUserPage selectSearchUserType()
 	{
 		Select select=new Select(searchusertype);
 		select.selectByIndex(1);
+		return this;
 	}
-	public void clickOnSearchbutton()
+	public AdminUserPage clickOnSearchbutton()
 	{
 		searchbtn.click();
+		return this;
 	}
 	public boolean userCreationAlert()
 	{

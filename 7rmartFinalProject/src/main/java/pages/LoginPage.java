@@ -5,8 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+import utilities.WaitUtility;
 
+public class LoginPage {
+	WaitUtility wait=new WaitUtility();
 	public WebDriver driver;
 
 	public LoginPage(WebDriver driver) {
@@ -25,19 +27,24 @@ public class LoginPage {
 	@FindBy(xpath = "//p[text()='Dashboard']")
 	private WebElement dashboard;
 
-	public void enterUsernameonUsernamefield(String username) {
+	public LoginPage enterUsernameonUsernamefield(String username) {
 		usernamefield.sendKeys(username);
+		return this;
 	}
 
-	public void enterPwdonPasswordfield(String password) {
+	public LoginPage enterPwdonPasswordfield(String password) {
 		passwordfield.sendKeys(password);
+		return this;
 	}
 
-	public void clickOnSignIn() {
+	public HomePage clickOnSignIn() {
+		wait.waitUntilClickable(driver,signInbtn);
 		signInbtn.click();
+		return new HomePage(driver);
 	}
 	
 	public boolean alertVisibility() {
+		wait.waitUntilAlertIsPresent(driver);
 		return visiblealert.isDisplayed();
 	}
 	

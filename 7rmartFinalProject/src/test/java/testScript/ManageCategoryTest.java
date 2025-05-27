@@ -8,24 +8,25 @@ import org.testng.annotations.Test;
 
 import automationCore.Base;
 import constants.Messages;
+import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageCategoryPage;
 import utilities.ExcelUtility;
 
 public class ManageCategoryTest extends Base{
+	HomePage homePage;
+	ManageCategoryPage categoryPage;
 	@Test(description = "Verify that user can add new category on category page.")
 	public void verifyUserCanAddNewCategoryOnCategoryPage() throws IOException, AWTException
 	{
 		String username = ExcelUtility.readStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(0, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsernameonUsernamefield(username);
-		loginpage.enterPwdonPasswordfield(password);
-		loginpage.clickOnSignIn();
+		loginpage.enterUsernameonUsernamefield(username).enterPwdonPasswordfield(password);
+		homePage=loginpage.clickOnSignIn();
 		
-		ManageCategoryPage categoryPage=new ManageCategoryPage(driver);
-		categoryPage.clickOnManageCategory();
-		categoryPage.clickOnNewCategory();
+		//ManageCategoryPage categoryPage=new ManageCategoryPage(driver);
+		categoryPage.clickOnManageCategory().clickOnNewCategory();
 		String  newCategory=ExcelUtility.readStringData(0, 0, "ManageCategoryPage");
 		categoryPage.enterCategoryOnCategoryfield(newCategory);
 		categoryPage.clickonDiscountfield();
@@ -43,12 +44,10 @@ public class ManageCategoryTest extends Base{
 		String username = ExcelUtility.readStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(0, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsernameonUsernamefield(username);
-		loginpage.enterPwdonPasswordfield(password);
-		loginpage.clickOnSignIn();
-		ManageCategoryPage categoryPage=new ManageCategoryPage(driver);
-		categoryPage.clickOnManageCategory();
-		categoryPage.clickOnSearchCategoryIcon();
+		loginpage.enterUsernameonUsernamefield(username).enterPwdonPasswordfield(password);
+		homePage=loginpage.clickOnSignIn();
+		//ManageCategoryPage categoryPage=new ManageCategoryPage(driver);
+		categoryPage.clickOnManageCategory().clickOnSearchCategoryIcon();
 		//String  newCategory=ExcelUtility.readStringData(0, 0, "ManageCategoryPage");
 		categoryPage.enterCategoryValueIntheCategoryField();
 		categoryPage.clickonsearchbutton();
