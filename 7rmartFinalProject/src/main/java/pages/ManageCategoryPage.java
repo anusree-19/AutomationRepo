@@ -16,23 +16,14 @@ import constants.Constant;
 import utilities.WaitUtility;
 
 public class ManageCategoryPage {
-	WaitUtility wait=new WaitUtility();
+	WaitUtility wait = new WaitUtility();
 	public WebDriver driver;
 
 	public ManageCategoryPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(xpath = "//input[@name='username']")
-	private WebElement usernamefield;
-	@FindBy(xpath = "//input[@name='password']")
-	private WebElement passwordfield;
-	@FindBy(xpath = "//button[text()=\"Sign In\"]")
-	private WebElement signInbtn;
-	
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category']//child::p")
-	private WebElement managecategory;
+
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	private WebElement newcategorybtn;
 	@FindBy(xpath = "//input[@id='category']")
@@ -57,75 +48,68 @@ public class ManageCategoryPage {
 	private WebElement categoryalert;
 	@FindBy(xpath = "//tbody//tr//td[text()='Shoes']")
 	private WebElement listtitle;
-	
-	public ManageCategoryPage clickOnManageCategory()
-	{
-		managecategory.click();
-		return new ManageCategoryPage(driver);
-	}
-	public ManageCategoryPage clickOnNewCategory()
-	{
-		wait.waitUntilClickable(driver,newcategorybtn);
+
+	public ManageCategoryPage clickOnNewCategory() {
+		wait.waitUntilClickable(driver, newcategorybtn);
 		newcategorybtn.click();
 		return this;
 	}
-	public ManageCategoryPage enterCategoryOnCategoryfield(String newCategory)
-	{
+
+	public ManageCategoryPage enterCategoryOnCategoryfield(String newCategory) {
 		categoryfield.sendKeys(newCategory);
 		return this;
 	}
-	public ManageCategoryPage clickonDiscountfield()
-	{
+
+	public ManageCategoryPage clickonSelectGroup() {
 		discount.click();
 		return this;
 	}
-	
-	public ManageCategoryPage clickOnChooseFile() 
-	{
+
+	public ManageCategoryPage clickOnChooseFile() {
 		choosefile.sendKeys(Constant.ADDCATEGORYIMG);
 		return this;
 	}
-	public ManageCategoryPage clickOnShowOnTopMenuRadiobutton()
-	{
+
+	public ManageCategoryPage clickOnShowOnTopMenuRadiobutton() {
 		ShowOnTopMenuRadiobutton.click();
 		return this;
 	}
-	public ManageCategoryPage clickOnShowOnLeftMenuRadiobutton()
-	{
+
+	public ManageCategoryPage clickOnShowOnLeftMenuRadiobutton() {
 		ShowOnLeftMenuRadiobutton.click();
 		return this;
 	}
-	public ManageCategoryPage clickOnCategorySaveButton()
-	{
-		JavascriptExecutor javascript= (JavascriptExecutor) driver; 
-		javascript.executeScript("window.scrollBy(0,650)",  "");
-		javascript.executeScript("arguments[0].click();",savecategorybutton);
-		//savecategorybutton.click();
+
+	public ManageCategoryPage clickOnCategorySaveButton() {
+		JavascriptExecutor javascript = (JavascriptExecutor) driver;
+		javascript.executeScript("window.scrollBy(0,650)", "");
+		javascript.executeScript("arguments[0].click();", savecategorybutton);
+		// savecategorybutton.click();
 		return this;
 	}
-	public ManageCategoryPage clickOnSearchCategoryIcon()
-	{
+
+	public ManageCategoryPage clickOnSearchCategoryIcon() {
 		searchcategorybutton.click();
 		return this;
 	}
-	public ManageCategoryPage enterCategoryValueIntheCategoryField()
-	{
-		inputcategoryvalue.sendKeys(Constant.CATEGORY1);
+
+	public ManageCategoryPage enterCategoryValueIntheCategoryField() {
+		inputcategoryvalue.sendKeys(Constant.SEARCHCATEGORYVALUE);
 		return this;
 	}
-	public ManageCategoryPage clickonsearchbutton()
-	{
+
+	public ManageCategoryPage clickonsearchbutton() {
 		wait.waitUntilClickable(driver, searchcategorybtn);
 		searchcategorybtn.click();
 		return this;
 	}
-	public boolean getCateogryCreationAlert()
-	{
-		
+
+	public boolean getCateogryCreationAlert() {
+
 		return categoryalert.isDisplayed();
 	}
-	public String getCategoryTitle()
-	{
+
+	public String getCategoryTitle() {
 		return listtitle.getText();
 	}
 

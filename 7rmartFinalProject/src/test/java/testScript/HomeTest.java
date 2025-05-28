@@ -21,11 +21,11 @@ public class HomeTest extends Base {
 		String password = ExcelUtility.readStringData(0, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUsernameonUsernamefield(username).enterPwdonPasswordfield(password);
-		homePage=loginpage.clickOnSignIn();
+		homePage = loginpage.clickOnSignIn();
 		homePage.clickOnAdminLink();
-		loginpage=homePage.clickOnLogout();
+		loginpage = homePage.clickOnLogout();
 		boolean loginpageheader = homePage.loginpageHeaderDisplayed();
-		Assert.assertTrue(loginpageheader,Messages.LOGOUTERROR);
+		Assert.assertTrue(loginpageheader, Messages.LOGOUTERROR);
 
 	}
 

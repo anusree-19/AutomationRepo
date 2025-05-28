@@ -8,23 +8,14 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.WaitUtility;
 
 public class ManageNewsPage {
-	WaitUtility wait=new WaitUtility();
+	WaitUtility wait = new WaitUtility();
 	public WebDriver driver;
 
 	public ManageNewsPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(xpath = "//input[@name='username']")
-	private WebElement usernamefield;
-	@FindBy(xpath = "//input[@name='password']")
-	private WebElement passwordfield;
-	@FindBy(xpath = "//button[text()=\"Sign In\"]")
-	private WebElement signInbtn;
-	
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']//child::p")
-	private WebElement managenews;
+
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	private WebElement newnewsbtn;
 	@FindBy(xpath = "//textarea[@id='news']")
@@ -33,42 +24,25 @@ public class ManageNewsPage {
 	private WebElement savenewsbtn;
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement newsalert;
-	
-	public void enterUsernameonUsernamefield(String username) {
-		usernamefield.sendKeys(username);
-	}
 
-	public void enterPwdonPasswordfield(String password) {
-		passwordfield.sendKeys(password);
-	}
-
-	public void clickOnSignIn() {
-		signInbtn.click();
-	}
-	public ManageNewsPage clickOnManageNews()
-	{
-		managenews.click();
-		return new ManageNewsPage(driver);
-	}
-	public ManageNewsPage clickOnNewNewsbutton()
-	{
+	public ManageNewsPage clickOnNewNewsbutton() {
 		newnewsbtn.click();
 		return this;
 	}
-	public ManageNewsPage enterNewNewsOnTextbox(String newnews)
-	{
+
+	public ManageNewsPage enterNewNewsOnTextbox(String newnews) {
 		newstexbox.sendKeys(newnews);
 		return this;
 	}
-	public ManageNewsPage clickOnSavebutton()
-	{
-		wait.waitUntilClickable(driver,savenewsbtn);
+
+	public ManageNewsPage clickOnSavebutton() {
+		wait.waitUntilClickable(driver, savenewsbtn);
 		savenewsbtn.click();
 		return this;
 	}
+
 	public boolean newNewsCreationAlert() {
 		return newsalert.isDisplayed();
 	}
-	
-	
+
 }

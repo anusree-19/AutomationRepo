@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import utilities.WaitUtility;
 
 public class AdminUserPage {
-	WaitUtility wait=new WaitUtility();
+	WaitUtility wait = new WaitUtility();
 	public WebDriver driver;
 
 	public AdminUserPage(WebDriver driver) {
@@ -17,16 +17,7 @@ public class AdminUserPage {
 		PageFactory.initElements(driver, this);
 
 	}
-	
-	@FindBy(xpath = "//input[@name='username']")
-	private WebElement usernamefield;
-	@FindBy(xpath = "//input[@name='password']")
-	private WebElement passwordfield;
-	@FindBy(xpath = "//button[text()=\"Sign In\"]")
-	private WebElement signInbtn;
-	
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']")
-	private WebElement adminuser;
+
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	private WebElement newuser;
 	@FindBy(xpath = "//input[@id='username']")
@@ -37,7 +28,7 @@ public class AdminUserPage {
 	private WebElement usertype;
 	@FindBy(xpath = "//button[@name='Create']")
 	private WebElement savebtn;
-	
+
 	@FindBy(xpath = "//a[text()=' Search']")
 	private WebElement search;
 	@FindBy(xpath = "//input[@id='un']")
@@ -46,93 +37,73 @@ public class AdminUserPage {
 	private WebElement searchusertype;
 	@FindBy(xpath = "//button[@name='Search']")
 	private WebElement searchbtn;
-	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement newusercreationalert;
 	@FindBy(xpath = "//span[text()='Active']")
 	private WebElement status;
-	
-	public void enterUsernameonUsernamefield(String username) {
-		usernamefield.sendKeys(username);
-	}
 
-	public void enterPwdonPasswordfield(String password) {
-		passwordfield.sendKeys(password);
-	}
-
-	public void clickOnSignIn() {
-		signInbtn.click();
-	}
-
-	public AdminUserPage clickOnAdminUsers()
-	{
-		wait.waitUntilClickable(driver, adminuser);
-		adminuser.click();
-		return new AdminUserPage(driver);
-	}
-	public AdminUserPage clickOnNewUser()
-	{
+	public AdminUserPage clickOnNewUser() {
 		newuser.click();
 		return this;
 	}
-	public AdminUserPage enterUsernameOnUsrnamefield(String newadminuser)
-	{
+
+	public AdminUserPage enterUsernameOnUsrnamefield(String newadminuser) {
 		username.sendKeys(newadminuser);
 		return this;
 	}
-	public AdminUserPage enterpasswordOnPwdfield(String newadminpwd)
-	{
+
+	public AdminUserPage enterpasswordOnPwdfield(String newadminpwd) {
 		password.sendKeys(newadminpwd);
 		return this;
 	}
-	public AdminUserPage clickOnUserTypefield()
-	{
-		wait.waitUntilSelected(driver, usertype);
+
+	public AdminUserPage clickOnUserTypefield() {
 		usertype.click();
 		return this;
 	}
-	public AdminUserPage selectUserType()
-	{
-		Select select=new Select(usertype);
+
+	public AdminUserPage selectUserType() {
+		Select select = new Select(usertype);
 		select.selectByIndex(1);
 		return this;
 	}
-	public AdminUserPage clickOnSavebutton()
-	{
+
+	public AdminUserPage clickOnSavebutton() {
 		savebtn.click();
 		return this;
 	}
-	public AdminUserPage clickOnSearchforanUser()
-	{
+
+	public AdminUserPage clickOnSearchforanUser() {
 		search.click();
 		return this;
 	}
-	public AdminUserPage enterSearchUsernameonUsernamefield(String searchusername)
-	{
+
+	public AdminUserPage enterSearchUsernameonUsernamefield(String searchusername) {
 		searchusernamefield.sendKeys(searchusername);
 		return this;
 	}
-	public AdminUserPage clickOnSearchUserTypefield()
-	{
+
+	public AdminUserPage clickOnSearchUserTypefield() {
 		searchusertype.click();
 		return this;
 	}
-	public AdminUserPage selectSearchUserType()
-	{
-		Select select=new Select(searchusertype);
+
+	public AdminUserPage selectSearchUserType() {
+		Select select = new Select(searchusertype);
 		select.selectByIndex(1);
 		return this;
 	}
-	public AdminUserPage clickOnSearchbutton()
-	{
+
+	public AdminUserPage clickOnSearchbutton() {
 		searchbtn.click();
 		return this;
 	}
-	public boolean userCreationAlert()
-	{
+
+	public boolean userCreationAlert() {
 		return newusercreationalert.isDisplayed();
 	}
-	public String searchUserStatus()
-	{
+
+	public String searchUserStatus() {
 		return status.getText();
 	}
 }

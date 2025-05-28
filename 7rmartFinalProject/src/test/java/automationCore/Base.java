@@ -22,12 +22,12 @@ public class Base {
 	Properties prop;
 	FileInputStream fS;
 	public WebDriver driver;
-	
-	@BeforeMethod(alwaysRun=true)
+
+	@BeforeMethod(alwaysRun = true)
 	@Parameters("browser")
 	public void initializeBrowser(String browser) throws Exception {
-		prop=new Properties();
-		fS=new FileInputStream(Constant.CONFIGFILE);
+		prop = new Properties();
+		fS = new FileInputStream(Constant.CONFIGFILE);
 		prop.load(fS);
 		if (browser.equalsIgnoreCase("Chrome")) {
 			driver = new ChromeDriver();
@@ -38,15 +38,15 @@ public class Base {
 		} else {
 			throw new Exception("Invalid Browser");
 		}
-		//driver = new ChromeDriver();
+		// driver = new ChromeDriver();
 		driver.get(prop.getProperty("url"));
 		driver.manage().window().maximize();
-		WaitUtility wait=new WaitUtility();
+		WaitUtility wait = new WaitUtility();
 		wait.implicitWait(driver);
-		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		// driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 
-	@AfterMethod(alwaysRun=true)
+	@AfterMethod(alwaysRun = true)
 	public void driverQuit(ITestResult iTestResult) throws IOException {
 		if (iTestResult.getStatus() == iTestResult.FAILURE) {
 			ScreenshotUtility screenshot = new ScreenshotUtility();

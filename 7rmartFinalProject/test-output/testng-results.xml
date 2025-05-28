@@ -1,109 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-27T21:44:45 IST" name="Default suite" finished-at="2025-05-27T21:44:45 IST" duration-ms="161">
+  <suite started-at="2025-05-28T23:54:46 IST" name="ParallelTesting" finished-at="2025-05-28T23:54:57 IST" duration-ms="11148">
     <groups>
     </groups>
-    <test started-at="2025-05-27T21:44:45 IST" name="Default test" finished-at="2025-05-27T21:44:45 IST" duration-ms="161">
-      <class name="testScript.LoginTest">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.LoginTest@8458f04]" started-at="2025-05-27T21:44:45 IST" name="initializeBrowser" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1748362485853" status="FAIL">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Parameter 'browser' is required by BeforeMethod on method initializeBrowser but has not been marked @Optional or defined
-in C:\Users\Anusree\AppData\Local\Temp\testng-eclipse-1268105102\testng-customsuite.xml]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Parameter 'browser' is required by BeforeMethod on method initializeBrowser but has not been marked @Optional or defined
-in C:\Users\Anusree\AppData\Local\Temp\testng-eclipse-1268105102\testng-customsuite.xml
-at org.testng.internal.Parameters.createParams(Parameters.java:264)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
-at org.testng.internal.Parameters.createParameters(Parameters.java:690)
-at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+    <test started-at="2025-05-28T23:54:46 IST" name="Test1" finished-at="2025-05-28T23:54:53 IST" duration-ms="7390">
+      <class name="testScript.ManageNewsTest">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.ManageNewsTest@368247b9]" started-at="2025-05-28T23:54:46 IST" name="initializeBrowser" finished-at="2025-05-28T23:54:50 IST" duration-ms="3588" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyUserCanSucessfullyLoginWithValidCredentials()[pri:1, instance:testScript.LoginTest@8458f04]" started-at="2025-05-27T21:44:45 IST" name="verifyUserCanSucessfullyLoginWithValidCredentials" description="Verifying User is able to login with Valid credentials" finished-at="2025-05-27T21:44:45 IST" duration-ms="1" status="SKIP">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Parameter 'browser' is required by BeforeMethod on method initializeBrowser but has not been marked @Optional or defined
-in C:\Users\Anusree\AppData\Local\Temp\testng-eclipse-1268105102\testng-customsuite.xml]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Parameter 'browser' is required by BeforeMethod on method initializeBrowser but has not been marked @Optional or defined
-in C:\Users\Anusree\AppData\Local\Temp\testng-eclipse-1268105102\testng-customsuite.xml
-at org.testng.internal.Parameters.createParams(Parameters.java:264)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
-at org.testng.internal.Parameters.createParameters(Parameters.java:690)
-at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+        <test-method signature="verifyUserCanAddNewNewsSucessfullyInManageNewsPage()[pri:0, instance:testScript.ManageNewsTest@368247b9]" started-at="2025-05-28T23:54:50 IST" name="verifyUserCanAddNewNewsSucessfullyInManageNewsPage" description="Verify that whether the User can add new news in ManageNews page" finished-at="2025-05-28T23:54:53 IST" duration-ms="3719" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUserCanSucessfullyLoginWithValidCredentials -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.LoginTest@8458f04]" started-at="2025-05-27T21:44:45 IST" name="driverQuit" finished-at="2025-05-27T21:44:45 IST" duration-ms="0" status="SKIP">
+        </test-method> <!-- verifyUserCanAddNewNewsSucessfullyInManageNewsPage -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.ManageNewsTest@368247b9]" started-at="2025-05-28T23:54:53 IST" name="driverQuit" finished-at="2025-05-28T23:54:53 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserCanAddNewNewsSucessfullyInManageNewsPage status=SUCCESS method=ManageNewsTest.verifyUserCanAddNewNewsSucessfullyInManageNewsPage()[pri:0, instance:testScript.ManageNewsTest@368247b9] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverQuit -->
-      </class> <!-- testScript.LoginTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- testScript.ManageNewsTest -->
+    </test> <!-- Test1 -->
+    <test started-at="2025-05-28T23:54:53 IST" name="Test2" finished-at="2025-05-28T23:54:57 IST" duration-ms="3721">
+      <class name="testScript.HomeTest">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.HomeTest@14028087]" started-at="2025-05-28T23:54:54 IST" name="initializeBrowser" finished-at="2025-05-28T23:54:56 IST" duration-ms="2177" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeBrowser -->
+        <test-method signature="verifyWhetherTheUserIsAbleToLogoutFromHomePage()[pri:0, instance:testScript.HomeTest@14028087]" started-at="2025-05-28T23:54:56 IST" name="verifyWhetherTheUserIsAbleToLogoutFromHomePage" description="Verifying whether the user is able to Logout from homepage" finished-at="2025-05-28T23:54:57 IST" duration-ms="1539" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyWhetherTheUserIsAbleToLogoutFromHomePage -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.HomeTest@14028087]" started-at="2025-05-28T23:54:57 IST" name="driverQuit" finished-at="2025-05-28T23:54:57 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyWhetherTheUserIsAbleToLogoutFromHomePage status=SUCCESS method=HomeTest.verifyWhetherTheUserIsAbleToLogoutFromHomePage()[pri:0, instance:testScript.HomeTest@14028087] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverQuit -->
+      </class> <!-- testScript.HomeTest -->
+    </test> <!-- Test2 -->
+  </suite> <!-- ParallelTesting -->
 </testng-results>

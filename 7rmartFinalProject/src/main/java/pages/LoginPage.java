@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.WaitUtility;
 
 public class LoginPage {
-	WaitUtility wait=new WaitUtility();
+	WaitUtility wait = new WaitUtility();
 	public WebDriver driver;
 
 	public LoginPage(WebDriver driver) {
@@ -38,21 +38,18 @@ public class LoginPage {
 	}
 
 	public HomePage clickOnSignIn() {
-		wait.waitUntilClickable(driver,signInbtn);
+		wait.waitUntilClickable(driver, signInbtn);
 		signInbtn.click();
 		return new HomePage(driver);
 	}
-	
+
 	public boolean alertVisibility() {
-		wait.waitUntilAlertIsPresent(driver);
 		return visiblealert.isDisplayed();
 	}
-	
+
 	public String getDashboardText() {
 
 		return dashboard.getText();
 	}
-	
-
 
 }

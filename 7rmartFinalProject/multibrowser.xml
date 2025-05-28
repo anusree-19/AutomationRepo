@@ -4,7 +4,7 @@
   <test  name="ChromeTest">
 	  <parameter name="browser" value="Chrome"></parameter>
     <classes>
-      <class name="testScript.ManageNewsTest">
+      <class name="testScript.HomeTest">
       </class>
     </classes>
   </test> <!-- Test -->
@@ -14,7 +14,7 @@
       <class name="testScript.HomeTest"/>
     </classes>
   </test> <!-- Test -->
-  <test  name="EdgeTest">
+  <test  name="FirefoxTest">
 	   <parameter name="browser" value="Firefox"></parameter>
     <classes>
       <class name="testScript.HomeTest"/>

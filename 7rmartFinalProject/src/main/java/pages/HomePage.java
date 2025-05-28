@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.WaitUtility;
 
 public class HomePage {
-	WaitUtility wait=new WaitUtility();
+	WaitUtility wait = new WaitUtility();
 	public WebDriver driver;
 
 	public HomePage(WebDriver driver) {
@@ -16,31 +16,18 @@ public class HomePage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//input[@name='username']")
-	private WebElement usernamefield;
-	@FindBy(xpath = "//input[@name='password']")
-	private WebElement passwordfield;
-	@FindBy(xpath = "//button[text()=\"Sign In\"]")
-	private WebElement signInbtn;
-
 	@FindBy(xpath = "//a[@class='nav-link']//img")
 	private WebElement admin;
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']//parent::div")
 	private WebElement logout;
 	@FindBy(xpath = "//b[text()='7rmart supermarket']")
 	WebElement loginheader;
-
-	public void enterUsernameonUsernamefield(String username) {
-		usernamefield.sendKeys(username);
-	}
-
-	public void enterPwdonPasswordfield(String password) {
-		passwordfield.sendKeys(password);
-	}
-
-	public void clickOnSignIn() {
-		signInbtn.click();
-	}
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']")
+	private WebElement adminuser;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']//child::p")
+	private WebElement managenews;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category']//child::p")
+	private WebElement managecategory;
 
 	public HomePage clickOnAdminLink() {
 		admin.click();
@@ -52,9 +39,25 @@ public class HomePage {
 		logout.click();
 		return new LoginPage(driver);
 	}
-	
+
 	public boolean loginpageHeaderDisplayed() {
 		return loginheader.isDisplayed();
+	}
+
+	public AdminUserPage clickOnAdminUsers() {
+		wait.waitUntilClickable(driver, adminuser);
+		adminuser.click();
+		return new AdminUserPage(driver);
+	}
+
+	public ManageNewsPage clickOnManageNews() {
+		managenews.click();
+		return new ManageNewsPage(driver);
+	}
+
+	public ManageCategoryPage clickOnManageCategory() {
+		managecategory.click();
+		return new ManageCategoryPage(driver);
 	}
 
 }

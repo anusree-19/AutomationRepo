@@ -12,24 +12,25 @@ import pages.LoginPage;
 import pages.ManageNewsPage;
 import utilities.ExcelUtility;
 
-public class ManageNewsTest extends Base{
+public class ManageNewsTest extends Base {
 	HomePage homePage;
 	ManageNewsPage managenewspage;
+
 	@Test(description = "Verify that whether the User can add new news in ManageNews page")
-	public void verifyUserCanAddNewNewsSucessfullyInManageNewsPage() throws IOException
-	{
+	public void verifyUserCanAddNewNewsSucessfullyInManageNewsPage() throws IOException {
 		String username = ExcelUtility.readStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(0, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUsernameonUsernamefield(username).enterPwdonPasswordfield(password);
-		homePage=loginpage.clickOnSignIn();
-		//ManageNewsPage managenewspage=new ManageNewsPage(driver);
-		managenewspage.clickOnManageNews().clickOnNewNewsbutton();
-		String newnews=ExcelUtility.readStringData(0, 0, "ManageNewsPage");
-		managenewspage.enterNewNewsOnTextbox(newnews);
-		managenewspage.clickOnSavebutton();
-		boolean newnewsalert=managenewspage.newNewsCreationAlert();
-		Assert.assertTrue(newnewsalert,Messages.ADDNEWSERROR);
+		homePage = loginpage.clickOnSignIn();
+
+		// ManageNewsPage managenewspage=new ManageNewsPage(driver);
+		managenewspage = homePage.clickOnManageNews();
+		String newnews = ExcelUtility.readStringData(0, 0, "ManageNewsPage");
+		managenewspage.clickOnNewNewsbutton().enterNewNewsOnTextbox(newnews).clickOnSavebutton();
+
+		boolean newnewsalert = managenewspage.newNewsCreationAlert();
+		Assert.assertTrue(newnewsalert, Messages.ADDNEWSERROR);
 	}
 
 }
