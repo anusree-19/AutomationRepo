@@ -13,10 +13,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import constants.Constant;
+import utilities.PageUtility;
 import utilities.WaitUtility;
 
 public class ManageCategoryPage {
 	WaitUtility wait = new WaitUtility();
+	
 	public WebDriver driver;
 
 	public ManageCategoryPage(WebDriver driver) {
@@ -46,8 +48,8 @@ public class ManageCategoryPage {
 	private WebElement searchcategorybtn;
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement categoryalert;
-	@FindBy(xpath = "//tbody//tr//td[text()='Shoes']")
-	private WebElement listtitle;
+	@FindBy(xpath="//span[text()='Active']")
+	WebElement searchcategoryfoundmessage;
 
 	public ManageCategoryPage clickOnNewCategory() {
 		wait.waitUntilClickable(driver, newcategorybtn);
@@ -81,10 +83,8 @@ public class ManageCategoryPage {
 	}
 
 	public ManageCategoryPage clickOnCategorySaveButton() {
-		JavascriptExecutor javascript = (JavascriptExecutor) driver;
-		javascript.executeScript("window.scrollBy(0,650)", "");
-		javascript.executeScript("arguments[0].click();", savecategorybutton);
-		// savecategorybutton.click();
+		PageUtility page=new PageUtility();
+		page.jsClick(savecategorybutton,driver);
 		return this;
 	}
 
@@ -109,8 +109,10 @@ public class ManageCategoryPage {
 		return categoryalert.isDisplayed();
 	}
 
-	public String getCategoryTitle() {
-		return listtitle.getText();
+	public String getSearchedCategoryMessage()
+	{
+		return searchcategoryfoundmessage.getText();
 	}
+
 
 }

@@ -48,9 +48,9 @@ public class ManageCategoryTest extends Base {
 		// String newCategory=ExcelUtility.readStringData(0, 0, "ManageCategoryPage");
 		categoryPage.clickOnSearchCategoryIcon().enterCategoryValueIntheCategoryField().clickonsearchbutton();
 
-		String expected = "Shoes";
-		String actual = categoryPage.getCategoryTitle();
-		Assert.assertEquals(actual, expected, Messages.SEARCHCATEOGRYERROR);
+		String expected="Active";
+		String actual=categoryPage.getSearchedCategoryMessage();
+		Assert.assertEquals(actual,expected,Messages.SEARCHCATEOGRYERROR);
 
 	}
 

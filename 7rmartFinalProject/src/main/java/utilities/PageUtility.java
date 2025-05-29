@@ -52,7 +52,7 @@ public class PageUtility {
 		return radioButton.isSelected();
 	}
 
-	public void jsClick(WebElement element) {
+	public void jsClick(WebElement element, WebDriver driver) {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
 	}
 

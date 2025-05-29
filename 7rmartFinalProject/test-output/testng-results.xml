@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-28T23:54:46 IST" name="ParallelTesting" finished-at="2025-05-28T23:54:57 IST" duration-ms="11148">
+  <suite started-at="2025-05-29T16:58:53 IST" name="LoginTest" finished-at="2025-05-29T16:58:58 IST" duration-ms="5160">
     <groups>
+      <group name="smoke">
+        <method signature="LoginTest.verifyUserCanSucessfullyLoginWithValidCredentials()[pri:1, instance:testScript.LoginTest@27d4a09]" name="verifyUserCanSucessfullyLoginWithValidCredentials" class="testScript.LoginTest"/>
+      </group> <!-- smoke -->
     </groups>
-    <test started-at="2025-05-28T23:54:46 IST" name="Test1" finished-at="2025-05-28T23:54:53 IST" duration-ms="7390">
-      <class name="testScript.ManageNewsTest">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.ManageNewsTest@368247b9]" started-at="2025-05-28T23:54:46 IST" name="initializeBrowser" finished-at="2025-05-28T23:54:50 IST" duration-ms="3588" status="PASS">
+    <test started-at="2025-05-29T16:58:53 IST" name="Test" finished-at="2025-05-29T16:58:58 IST" duration-ms="5160">
+      <class name="testScript.LoginTest">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.LoginTest@27d4a09]" started-at="2025-05-29T16:58:53 IST" name="initializeBrowser" finished-at="2025-05-29T16:58:56 IST" duration-ms="3114" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,52 +21,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyUserCanAddNewNewsSucessfullyInManageNewsPage()[pri:0, instance:testScript.ManageNewsTest@368247b9]" started-at="2025-05-28T23:54:50 IST" name="verifyUserCanAddNewNewsSucessfullyInManageNewsPage" description="Verify that whether the User can add new news in ManageNews page" finished-at="2025-05-28T23:54:53 IST" duration-ms="3719" status="PASS">
+        <test-method signature="verifyUserCanSucessfullyLoginWithValidCredentials()[pri:1, instance:testScript.LoginTest@27d4a09]" started-at="2025-05-29T16:58:56 IST" name="verifyUserCanSucessfullyLoginWithValidCredentials" description="Verifying User is able to login with Valid credentials" finished-at="2025-05-29T16:58:58 IST" duration-ms="1950" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUserCanAddNewNewsSucessfullyInManageNewsPage -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.ManageNewsTest@368247b9]" started-at="2025-05-28T23:54:53 IST" name="driverQuit" finished-at="2025-05-28T23:54:53 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- verifyUserCanSucessfullyLoginWithValidCredentials -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.LoginTest@27d4a09]" started-at="2025-05-29T16:58:58 IST" name="driverQuit" finished-at="2025-05-29T16:58:58 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyUserCanAddNewNewsSucessfullyInManageNewsPage status=SUCCESS method=ManageNewsTest.verifyUserCanAddNewNewsSucessfullyInManageNewsPage()[pri:0, instance:testScript.ManageNewsTest@368247b9] output={null}]]]>
+                <![CDATA[[TestResult name=verifyUserCanSucessfullyLoginWithValidCredentials status=SUCCESS method=LoginTest.verifyUserCanSucessfullyLoginWithValidCredentials()[pri:1, instance:testScript.LoginTest@27d4a09] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverQuit -->
-      </class> <!-- testScript.ManageNewsTest -->
-    </test> <!-- Test1 -->
-    <test started-at="2025-05-28T23:54:53 IST" name="Test2" finished-at="2025-05-28T23:54:57 IST" duration-ms="3721">
-      <class name="testScript.HomeTest">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.HomeTest@14028087]" started-at="2025-05-28T23:54:54 IST" name="initializeBrowser" finished-at="2025-05-28T23:54:56 IST" duration-ms="2177" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyWhetherTheUserIsAbleToLogoutFromHomePage()[pri:0, instance:testScript.HomeTest@14028087]" started-at="2025-05-28T23:54:56 IST" name="verifyWhetherTheUserIsAbleToLogoutFromHomePage" description="Verifying whether the user is able to Logout from homepage" finished-at="2025-05-28T23:54:57 IST" duration-ms="1539" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyWhetherTheUserIsAbleToLogoutFromHomePage -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.HomeTest@14028087]" started-at="2025-05-28T23:54:57 IST" name="driverQuit" finished-at="2025-05-28T23:54:57 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyWhetherTheUserIsAbleToLogoutFromHomePage status=SUCCESS method=HomeTest.verifyWhetherTheUserIsAbleToLogoutFromHomePage()[pri:0, instance:testScript.HomeTest@14028087] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverQuit -->
-      </class> <!-- testScript.HomeTest -->
-    </test> <!-- Test2 -->
-  </suite> <!-- ParallelTesting -->
+      </class> <!-- testScript.LoginTest -->
+    </test> <!-- Test -->
+  </suite> <!-- LoginTest -->
 </testng-results>
